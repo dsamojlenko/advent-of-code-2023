@@ -1,15 +1,15 @@
-import { WeekTwo } from "@components/WeekTwo";
+import { DayTwo } from "@components/DayTwo";
+import { DayOne } from "@components/DayOne";
 import "./App.css";
-import { WeekOne } from "@components/WeekOne";
 
 function App() {
   return (
     <div className="m-8">
       <div>
-        <WeekTwo />
+        <DayTwo />
       </div>
       <div>
-        <WeekOne />
+        <DayOne />
       </div>
     </div>
   );

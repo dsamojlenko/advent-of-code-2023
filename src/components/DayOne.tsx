@@ -1,8 +1,8 @@
 import { weekOneData } from "@data/weekOne";
 import { useState } from "react";
-import { WeekContainer } from "./WeekContainer";
+import { DayContainer } from "./DayContainer";
 
-export const WeekOne = () => {
+export const DayOne = () => {
   const input = weekOneData;
   const [showData, setShowData] = useState(false);
 
@@ -69,7 +69,7 @@ export const WeekOne = () => {
   const partTwoResult = partTwo();
 
   return (
-    <WeekContainer>
+    <DayContainer>
       <h2>Week One</h2>
       <div className="flex flex-row gap-4">
         <div>
@@ -102,6 +102,6 @@ export const WeekOne = () => {
           </div>
         </div>
       )}
-    </WeekContainer>
+    </DayContainer>
   );
 };
