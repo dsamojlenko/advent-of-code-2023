@@ -1,5 +1,6 @@
 import { weekOneData } from "@data/weekOne";
 import { useState } from "react";
+import { WeekContainer } from "./WeekContainer";
 
 export const WeekOne = () => {
   const input = weekOneData;
@@ -68,15 +69,15 @@ export const WeekOne = () => {
   const partTwoResult = partTwo();
 
   return (
-    <div className="bg-white border border-gray-300 rounded-lg w-full p-4">
-      <h1>Week One</h1>
+    <WeekContainer>
+      <h2>Week One</h2>
       <div className="flex flex-row gap-4">
         <div>
-          <h2>Sum (Part 1)</h2>
+          <h3>Sum (Part 1)</h3>
           <pre>{partOneResult.sum}</pre>
         </div>
         <div>
-          <h2>Sum (Part 2)</h2>
+          <h3>Sum (Part 2)</h3>
           <pre>{partTwoResult.sum}</pre>
         </div>
       </div>
@@ -88,19 +89,19 @@ export const WeekOne = () => {
       {showData && (
         <div className="flex flex-row gap-4">
           <div>
-            <h2>Input:</h2>
+            <h3>Input:</h3>
             <pre>{input}</pre>
           </div>
           <div>
-            <h2>Calibration values (Part 1)</h2>
+            <h3>Calibration values (Part 1)</h3>
             <pre>{partOneResult.calibrationValues.join("\n")}</pre>
           </div>
           <div>
-            <h2>Calibration values (Part 2)</h2>
+            <h3>Calibration values (Part 2)</h3>
             <pre>{partTwoResult.calibrationValues.join("\n")}</pre>
           </div>
         </div>
       )}
-    </div>
+    </WeekContainer>
   );
 };
