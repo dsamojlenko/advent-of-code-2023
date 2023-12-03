@@ -1,7 +1,9 @@
 import { weekOneData } from "@data/weekOne";
+import { useState } from "react";
 
 export const WeekOne = () => {
   const input = weekOneData;
+  const [showData, setShowData] = useState(false);
 
   const partOne = () => {
     const lines = input.split("\n");
@@ -66,27 +68,39 @@ export const WeekOne = () => {
   const partTwoResult = partTwo();
 
   return (
-    <div className="flex flex-row gap-4">
+    <div className="bg-white border border-gray-300 rounded-lg w-full p-4">
       <h1>Week One</h1>
-      <div>
-        <h2>Input:</h2>
-        <pre>{input}</pre>
+      <div className="flex flex-row gap-4">
+        <div>
+          <h2>Sum (Part 1)</h2>
+          <pre>{partOneResult.sum}</pre>
+        </div>
+        <div>
+          <h2>Sum (Part 2)</h2>
+          <pre>{partTwoResult.sum}</pre>
+        </div>
       </div>
-      <div>
-        <h2>Calibration values (Part 1)</h2>
-        <pre>{partOneResult.calibrationValues.join("\n")}</pre>
-      </div>
-      <div>
-        <h2>Calibration values (Part 2)</h2>
-        <pre>{partTwoResult.calibrationValues.join("\n")}</pre>
-      </div>
-      <div>
-        <h2>Sum (Part 1)</h2>
-        <pre>{partOneResult.sum}</pre>
 
-        <h2>Sum (Part 2)</h2>
-        <pre>{partTwoResult.sum}</pre>
-      </div>
+      <button className="mt-4" onClick={() => setShowData(!showData)}>
+        {showData ? "Hide" : "Show"} data
+      </button>
+
+      {showData && (
+        <div className="flex flex-row gap-4">
+          <div>
+            <h2>Input:</h2>
+            <pre>{input}</pre>
+          </div>
+          <div>
+            <h2>Calibration values (Part 1)</h2>
+            <pre>{partOneResult.calibrationValues.join("\n")}</pre>
+          </div>
+          <div>
+            <h2>Calibration values (Part 2)</h2>
+            <pre>{partTwoResult.calibrationValues.join("\n")}</pre>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

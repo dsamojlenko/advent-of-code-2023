@@ -1,15 +1,14 @@
-import './App.css'
-import { WeekOne } from '@components/WeekOne'
+import "./App.css";
+import { WeekOne } from "@components/WeekOne";
 
 function App() {
-
   return (
     <div className="m-8">
-      <div className="bg-white w-full h-screen p-4">
+      <div className="">
         <WeekOne />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
